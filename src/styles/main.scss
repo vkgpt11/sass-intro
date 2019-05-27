@@ -1,0 +1,80 @@
+@import 'footer';
+
+$color-primary: orange;
+$color-secondary: black;
+$color-tertiary: #4169e1;
+
+$font-lg: 40px;
+$font-md: 30px;
+$font-sm: 20px;
+
+.nav {
+  background-color: lighten($color-primary,20%);
+
+  ul li {
+    list-style: none;
+  }
+  a {
+      text-decoration: none;
+      font-size: $font-sm;
+      color: darken($color-secondary,20%);
+      &:hover{
+        color: $color-tertiary;
+      }
+  }
+}
+
+%heading {
+  color:$color-primary;
+  font-size: $font-lg;
+  background-color: $color-secondary;
+  text-align: center;
+}
+
+
+
+h1{
+  @extend %heading;
+  &:hover {
+    background-color: green;
+  }
+}
+
+.footer h3{
+  @extend h1;
+}
+
+@function fontSize($size){
+  @return $size * 2;
+}
+
+.banner p{
+  font-size: fontSize($font-sm);
+}
+
+.footer p{
+  font-size: fontSize(30px)
+}
+
+// @mixin  headingStyles($fontSize: 50px) {
+//   font-size: $fontSize;
+//   color: $color-secondary;
+//   text-align: center;
+// }
+// @mixin transition($param...) {
+//   transition: $param;
+// }
+
+// .banner h1{
+//   @include headingStyles($font-lg);
+// }
+
+// .footer h3{
+//   font-size: $font-md;
+//   @include headingStyles($font-md);
+//   @include transition(color .5s,background-color 1s);
+//   &:hover{
+//     color: $color-tertiary;
+//     background-color:$color-primary;
+//   }
+//}
