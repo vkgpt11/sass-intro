@@ -1,3 +1,3 @@
 # sass-intro
 
-![Design](homepage.png)
+![Design](homepage.PNG)
